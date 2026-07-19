@@ -27,6 +27,9 @@ resource "aws_instance" "web_server" {
     Name        = "${var.project_name}-web-server"
     Environment = var.environment
     Role        = "web"
+    Project = "TravelMemory"
+    Owner = "Rahul Sahane"
+    ManagedBy = "Terraform"
   }
 }
 
