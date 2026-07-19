@@ -13,7 +13,7 @@ variable "environment" {
 variable "aws_region" {
   description = "Target AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "vpc_cidr" {
@@ -40,21 +40,21 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+# Ubuntu 22.04 AMI (Override from terraform.tfvars if required)
 variable "ubuntu_ami" {
-  description = "Ubuntu 22.04 LTS AMI for us-east-1"
+  description = "Ubuntu 22.04 LTS AMI ID"
   type        = string
-  default     = "ami-080e1f13689e07408" # standard Ubuntu 22.04 LTS x86_64 in us-east-1
+  default     = ""
 }
 
 variable "allowed_ssh_ip" {
-  description = "IP address allowed to connect via SSH to the public instance"
+  description = "IP address allowed to connect via SSH"
   type        = string
-  default     = "0.0.0.0/0" # Should be set to user's specific IP in production (e.g. 203.0.113.50/32)
+  default     = "0.0.0.0/0"
 }
 
 variable "ssh_public_key" {
-  description = "SSH public key content to authorize on instances"
+  description = "SSH public key"
   type        = string
-  # A dummy key is provided as a placeholder. The user should replace it with their actual public key content.
-  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDxm2hV8v1D5R1v8L6+gq6uK2T7gWJk+q10/D0fUe+x/rWfQ== user@localhost"
+  default     = ""
 }

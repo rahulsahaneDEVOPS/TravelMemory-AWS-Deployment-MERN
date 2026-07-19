@@ -1,10 +1,14 @@
-# 1. SSH Key Pair Definition
+# ---------------------------------------------
+# SSH Key Pair
+# ---------------------------------------------
 resource "aws_key_pair" "deployer" {
   key_name   = "${var.project_name}-deployer-key"
   public_key = var.ssh_public_key
 }
 
-# 2. Web Server EC2 Instance (Public Subnet)
+# ---------------------------------------------
+# Web Server EC2 Instance (Public Subnet)
+# ---------------------------------------------
 resource "aws_instance" "web_server" {
   ami                  = var.ubuntu_ami
   instance_type        = var.instance_type
@@ -16,24 +20,30 @@ resource "aws_instance" "web_server" {
     aws_security_group.web_sg.id
   ]
 
-  # User data to run initial simple package update and make sure it has python3 (for Ansible)
   user_data = <<-EOF
               #!/bin/bash
               apt-get update -y
               apt-get install -y python3 python3-pip
               EOF
 
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+  }
+
   tags = {
     Name        = "${var.project_name}-web-server"
     Environment = var.environment
     Role        = "web"
-    Project = "TravelMemory"
-    Owner = "Rahul Sahane"
-    ManagedBy = "Terraform"
+    Project     = "TravelMemory"
+    Owner       = "Rahul Sahane"
+    ManagedBy   = "Terraform"
   }
 }
 
-# 3. Database Server EC2 Instance (Private Subnet)
+# ---------------------------------------------
+# Database Server EC2 Instance (Private Subnet)
+# ---------------------------------------------
 resource "aws_instance" "db_server" {
   ami                  = var.ubuntu_ami
   instance_type        = var.instance_type
@@ -45,16 +55,23 @@ resource "aws_instance" "db_server" {
     aws_security_group.db_sg.id
   ]
 
-  # User data to update packages and ensure Python is installed for Ansible
   user_data = <<-EOF
               #!/bin/bash
               apt-get update -y
               apt-get install -y python3 python3-pip
               EOF
 
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+  }
+
   tags = {
     Name        = "${var.project_name}-db-server"
     Environment = var.environment
     Role        = "database"
+    Project     = "TravelMemory"
+    Owner       = "Rahul Sahane"
+    ManagedBy   = "Terraform"
   }
 }
