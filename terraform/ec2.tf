@@ -10,7 +10,7 @@ resource "aws_key_pair" "deployer" {
 # Web Server EC2 Instance (Public Subnet)
 # ---------------------------------------------
 resource "aws_instance" "web_server" {
-  ami                  = var.ubuntu_ami
+  ami                  = data.aws_ssm_parameter.ubuntu_ami.value
   instance_type        = var.instance_type
   subnet_id            = aws_subnet.public.id
   key_name             = aws_key_pair.deployer.key_name
@@ -45,7 +45,7 @@ resource "aws_instance" "web_server" {
 # Database Server EC2 Instance (Private Subnet)
 # ---------------------------------------------
 resource "aws_instance" "db_server" {
-  ami                  = var.ubuntu_ami
+  ami                  = data.aws_ssm_parameter.ubuntu_ami.value
   instance_type        = var.instance_type
   subnet_id            = aws_subnet.private.id
   key_name             = aws_key_pair.deployer.key_name

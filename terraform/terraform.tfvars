@@ -1,14 +1,14 @@
-project_name  = "travelmemory"
-environment   = "production"
+project_name = "travelmemory"
+environment  = "production"
 
 # AWS Mumbai Region
-aws_region    = "ap-south-1"
+aws_region = "ap-south-1"
 
 # Free Tier Instance
-instance_type = "t2.micro"
+instance_type = "t3.micro"
 
 # Allow SSH only from your current public IP
 allowed_ssh_ip = "103.160.167.100/32"
 
 # Replace this with your actual SSH public key
-ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuWNubAUyzLP38JvMP9BppLlMSxQPIrYKopQ4aghOaKErY2gucfitzF7bD77nWsjN3awjV3tSFCdg7VDBR4oijJ1OxdeZpag/4AmiNea/ysPA6rqoIlhVWRhmxYdsg9N3Z+h4BDIst161aVBCBVdQW9BAKZ9h3L5Yy4TnLrAgocL4NobFFGajXDAJOlRyHyrcAiNL/smqZVEEROK4HVoPnOhM32uuhu/l01o4rfZ52XN7IZFpQ9JdFpAKRDceNYF17ntmJvpMufqHO4BVbwB0rlvPqJ/vhMvz8Z5k3mKNxfaMH4zDNAnA/e97S91BXaUa3/tBFBCe6uM0UieGGOrjYJTlvO+6FacxWa3AoDsRnMq8Zuo9/RG/8mOTCZE9UCtVAsotDJbIYRU8xHhHic/qt/EYDgcd6dYEpY65cq3+QI6qgROcmCrqjsvZWLcbs7FAilR5xZRZ+0/060hfnM4CkZR5GwBb8Cch+E2ld+FsNqGj6WUFDS/ygG9I+P+D32qb60u1HT69i70zAT6y4KYi8TGAQYAxVWTq+F+nxIHZF/6RvF+gVJZvBXYbjr79iNlG/h7FaKC2lGaqg3EZHkI0RFklE4y7vvRsNFf5SbKDnRZbun3V0LNp0z9ayboJ8imij1ovfTQ8xFW6MaGArFIeW/6fPdmTSebB3Ct69oL/Fvw== rahulsahane279@gmail.com"
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+PhT36UedxuQr9vjAG3mbgebwqlbuNqaFWPnN+04swRFNLhWoR/rSFPOZj/GP4wAilBucVf97ccLJyl3LLkbgb8ogRkD6Eop6OiDM5YawgWAQ86t79dz4JPoXoWJRGTYyM0/YX4rZSFZZZvZ41AxEsN/PktRL6AtAcqs/7qeYgv+wsXPLYxP7EgW6L3GqyLbcWD3ibQqIZJLwy9YJUzquiZhsTR0HERJdsi2z6+5Ppmldm7oyB43GcjVjHtajLn6svI057AmDwNLa8lUOkXIdNkkotxTRf/qpUZIewm/cqR8sAzGHYripdaIqs4oiBpeEv55PrO3hGP1Fg6HZyTK72bPXLSrb7TluZQom2WD9jV7tkz0zpyuBseokFNR0mgK7EZAGfVg8pWhgb1VjLshLnrr333eufSqK5psBoqQNs/FLsHwF7jTT66lYYjkUW1iXOXCbytFroRAjjGB0iWOGHeinhjdH9CM3pAOyTA4m9swGXOLeoWzohpnrhnHrwSEuO2npcI+wNAlzycpk0cN5MaprpLx9DVB3yjhGaOF7Vm2K7OlYl+qUjOtg8L+lMyZxdTrC9PfanLs8dsAu8KUJzKLhVWROW5b/0zvJOXsWGA0ivtHyYhvPdi8BZVkk05LC6roECRYoo856H0f29yKIGidOqlwguZ0INS73LYLVQQ== rahulsahane279@gmail.com"
